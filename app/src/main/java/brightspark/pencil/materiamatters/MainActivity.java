@@ -26,18 +26,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_status);
+
+        CircleView circle = (CircleView) findViewById(R.id.circleView);
+
+        CircleAnimation animation = new CircleAnimation(circle);
+        animation.setDuration(1000);
+        circle.startAnimation(animation);
 
         //setContentView(new MateriaView(this));
-        Button btn = (Button) findViewById(R.id.btn_takePhoto);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                TextView textView = (TextView)findViewById(R.id.txt_TextView);
-//                textView.setText("Button Clicked");
-                dispatchTakePictureIntent();
-            }
-        });
+//        Button btn = (Button) findViewById(R.id.btn_takePhoto);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                TextView textView = (TextView)findViewById(R.id.txt_TextView);
+////                textView.setText("Button Clicked");
+//                dispatchTakePictureIntent();
+//            }
+//        });
     }
 
     @Override
