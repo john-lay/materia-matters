@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
@@ -29,11 +32,24 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_status);
 
+        // Locate view
         CircleView circle = (CircleView) findViewById(R.id.circleView);
 
-        CircleAnimation animation = new CircleAnimation(circle);
-        animation.setDuration(1000);
-        circle.startAnimation(animation);
+        // Create an animation instance
+        Animation an = new RotateAnimation(0.0f, 360.0f);//, pivotX, pivotY);
+
+        // Set the animation's parameters
+        an.setDuration(10000);               // duration in ms
+        an.setRepeatCount(0);                // -1 = infinite repeated
+        an.setRepeatMode(Animation.REVERSE); // reverses each repeat
+        an.setFillAfter(true);               // keep rotation after animation
+
+        // Apply animation to image view
+        circle.setAnimation(an);
+
+//        CircleAnimation animation = new CircleAnimation(circle);
+//        animation.setDuration(1000);
+//        circle.startAnimation(animation);
 
         //setContentView(new MateriaView(this));
 //        Button btn = (Button) findViewById(R.id.btn_takePhoto);
