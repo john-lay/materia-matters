@@ -4,6 +4,6 @@
     android:layout_height="match_parent">
     <brightspark.pencil.materiamatters.CircleView
         android:id="@+id/circleView"
-        android:layout_width="300dp"
-        android:layout_height="300dp" />
+        android:layout_width="1000dp"
+        android:layout_height="1000dp" />
 </LinearLayout>

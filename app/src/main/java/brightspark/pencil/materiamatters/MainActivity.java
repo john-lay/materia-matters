@@ -2,10 +2,12 @@ package brightspark.pencil.materiamatters;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Debug;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     static final int REQUEST_TAKE_PHOTO = 1;
+    static final float viewDiameter = 200f;
     String mCurrentPhotoPath;
 
     @Override
@@ -33,19 +36,49 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status);
 
         // Locate view
-        CircleView circle = (CircleView) findViewById(R.id.circleView);
+        CircleView view = (CircleView) findViewById(R.id.circleView);
+
+        //draw view 200 units from the top and 200 units from the left of the screen origin (top-left)
+        float viewOriginX = 200f;
+        float viewOriginY = 200f;
+        view.setX(viewOriginX);
+        view.setY(viewOriginY);
 
         // Create an animation instance
-        Animation an = new RotateAnimation(0.0f, 360.0f);//, pivotX, pivotY);
+        //Animation an = new RotateAnimation(0.0f, 360.0f);//, pivotX, pivotY);
 
-        // Set the animation's parameters
-        an.setDuration(10000);               // duration in ms
-        an.setRepeatCount(0);                // -1 = infinite repeated
-        an.setRepeatMode(Animation.REVERSE); // reverses each repeat
-        an.setFillAfter(true);               // keep rotation after animation
+        //Log.d(TAG, "width = " + Integer.toString(circle.getWidth()));
 
-        // Apply animation to image view
-        circle.setAnimation(an);
+        CircleAnimation circle = new CircleAnimation(view, viewOriginX + viewDiameter, viewOriginY +viewDiameter);
+        //circle.showBlue();
+        //circle.rotateToGreen(1000);
+        //circle.rotateToRed(1000);
+        //circle.rotateToPurple(1000);
+        circle.rotateToBlue(1000);
+
+//        // set view at 45 degree angle all views are relative to the screen origin
+//        Animation an = new RotateAnimation(0.0f, 45.0f, viewOriginX + viewDiameter, viewOriginY +viewDiameter);
+//
+//        // Set the animation's parameters
+//        an.setDuration(0);               // duration in ms
+//        an.setRepeatCount(0);                // -1 = infinite repeated
+//        an.setRepeatMode(Animation.REVERSE); // reverses each repeat
+//        an.setFillAfter(true);               // keep rotation after animation
+//
+//        // Apply animation to image view
+//        view.setAnimation(an);
+//
+//        // rotate animation
+//        Animation rot = new RotateAnimation(0.0f, 45.0f, viewOriginX + viewDiameter, viewOriginY +viewDiameter);
+//
+//        // Set the animation's parameters
+//        rot.setDuration(3000);               // duration in ms
+//        rot.setRepeatCount(0);                // -1 = infinite repeated
+//        rot.setRepeatMode(Animation.REVERSE); // reverses each repeat
+//        rot.setFillAfter(true);               // keep rotation after animation
+//
+//        // Apply animation to image view
+//        view.setAnimation(rot);
 
 //        CircleAnimation animation = new CircleAnimation(circle);
 //        animation.setDuration(1000);

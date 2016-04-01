@@ -23,7 +23,8 @@ public class CircleView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        final int strokeWidth = 3;
+        final int strokeWidth = 2;
+        final int circleDiameter = 200;
 
         Paint paint = new Paint();
         paint.setAntiAlias(true);
@@ -33,7 +34,9 @@ public class CircleView extends View {
         paint.setColor(Color.rgb(204, 0, 0));
 
         //size 200x200 example
-        RectF rect = new RectF(strokeWidth, strokeWidth, 200 + strokeWidth, 200 + strokeWidth);
+        RectF rect = new RectF(strokeWidth,
+                strokeWidth,
+                circleDiameter + strokeWidth, circleDiameter + strokeWidth);
 
         // draw filled circle
         canvas.drawOval(rect, paint);
@@ -50,7 +53,9 @@ public class CircleView extends View {
         ///////////////////////////////////////////////////////////////////////////
 
         //size 200x200 example
-        RectF rect2 = new RectF(200 + strokeWidth + strokeWidth, strokeWidth, 400 + strokeWidth, 200 + strokeWidth);
+        RectF rect2 = new RectF(circleDiameter + strokeWidth + strokeWidth,
+                strokeWidth, (circleDiameter * 2) + strokeWidth,
+                circleDiameter + strokeWidth);
 
         // set fill
         paint.setStyle(Paint.Style.FILL);
@@ -71,7 +76,9 @@ public class CircleView extends View {
         ///////////////////////////////////////////////////////////////////////////
 
         //size 200x200 example
-        RectF rect3 = new RectF(200 + strokeWidth + strokeWidth, 200 + strokeWidth + strokeWidth, 400 + strokeWidth, 400 + strokeWidth);
+        RectF rect3 = new RectF(circleDiameter + strokeWidth + strokeWidth,
+                circleDiameter + strokeWidth + strokeWidth,
+                (circleDiameter * 2) + strokeWidth, (circleDiameter * 2) + strokeWidth);
 
         // set fill
         paint.setStyle(Paint.Style.FILL);
@@ -92,7 +99,10 @@ public class CircleView extends View {
         ///////////////////////////////////////////////////////////////////////////
 
         //size 200x200 example
-        RectF rect4 = new RectF(strokeWidth, 200 + strokeWidth + strokeWidth, 200 + strokeWidth, 400 + strokeWidth);
+        RectF rect4 = new RectF(strokeWidth,
+                circleDiameter + strokeWidth + strokeWidth,
+                circleDiameter + strokeWidth,
+                (circleDiameter * 2) + strokeWidth);
 
         // set fill
         paint.setStyle(Paint.Style.FILL);
