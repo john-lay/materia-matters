@@ -1,0 +1,6 @@
+D:\Repo\Materia Matters\ConsoleApp\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Repo\Materia Matters\ConsoleApp\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Repo\Materia Matters\ConsoleApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojAssemblyReference.cache
+D:\Repo\Materia Matters\ConsoleApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+D:\Repo\Materia Matters\ConsoleApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Repo\Materia Matters\ConsoleApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
